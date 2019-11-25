@@ -23,8 +23,8 @@ body {
 header {
   background: #000;
   padding-top: 30px;
-  min-height: 70px;
-  border-bottom: yellow 3px solid;
+  min-height: 10vh;
+  border-bottom: 3px yellow solid;
 }
 
 .logo {
@@ -48,30 +48,61 @@ header {
 .menu-nav .nav-item {
   /* float: left; */
   display: inline;
-  padding: 0 20px 0 20px;
+  padding: 0 20px 0 0px;
+}
+
+.menu-nav .nav-item.current > a {
 }
 
 .nav-item .nav-link {
   color: yellow;
   text-decoration: none;
   font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  text-shadow: 0px 0px 15px rgb(255, 255, 0, 0.5);
+}
+
+.showcase {
+  width: 100%;
+  height: 76.5vh;
+  background: url(/images/landing-page_showcase.jpg) no-repeat 0 -50px;
+  display: flex;
+}
+.video-wrap {
+  width: 80%;
+  max-width: 640px;
+  margin: auto;
 }
 
 .video-container {
-  display: flex;
-  min-height: 500px;
-  justify-content: center;
-  align-items: center;
-  background: url(/images/landing-page_showcase.jpg) no-repeat 0 -50px;
-  opacity: 0.9;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 0 25px 5px #ff0000;
 }
 
-.video-container iframe {
-  box-shadow: 0 0 20px 2px red;
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
   width: 100%;
   height: 10vh;
   background: #000;
+  border-top: 3px yellow solid;
+  color: yellow;
+  padding-top: 25px;
+  font-size: 16px;
+  text-align: center;
 }
