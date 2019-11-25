@@ -3,68 +3,72 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: StarWars;
+  src: url(/Fonts/STJEDISE.TTF);
+}
+
 body {
   background-color: #fff;
   color: #7f7f7f;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
+  font-family: StarWars;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
 }
 
 header {
-  width: 100%;
-  height: 15vh;
-  background-color: black;
-  overflow: hidden;
+  background: #000;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: yellow 3px solid;
 }
 
 .logo {
   float: left;
-  width: 15%;
-  height: 100%;
-  margin: 10px 0 0 50px;
+  min-width: 100px;
+  min-height: 50px;
   background-image: url(/images/logo.png);
-  background-size: 80%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
 .landing-menu {
-  /* display: inline-block; */
-  width: 70%;
   float: right;
-  color: yellow;
+  margin-top: 10px;
 }
 
 .landing-menu .menu-nav {
   list-style-type: none;
-  padding: 15px;
 }
 
 .menu-nav .nav-item {
-  display: inline-block;
-  padding: 15px;
+  /* float: left; */
+  display: inline;
+  padding: 0 20px 0 20px;
 }
 
 .nav-item .nav-link {
-  text-decoration: none;
   color: yellow;
+  text-decoration: none;
   font-size: 20px;
-  font-weight: 400;
 }
 
 .video-container {
   display: flex;
-  width: 100%;
-  height: 75vh;
+  min-height: 500px;
   justify-content: center;
   align-items: center;
-  background: #333;
+  background: url(/images/landing-page_showcase.jpg) no-repeat 0 -50px;
+  opacity: 0.9;
 }
 
-/* .video {
-  width: 65%;
-  height: 90%;
-} */
+.video-container iframe {
+  box-shadow: 0 0 20px 2px red;
+}
 
 footer {
   width: 100%;
