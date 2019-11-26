@@ -256,3 +256,37 @@ body {
   grid-area: footer;
   background: #000;
 }
+
+/* GALLERY PAGE */
+.gallery.grid {
+  display: grid;
+  grid-template-areas:
+    "header "
+    "slideshow"
+    "img-selector"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 2fr 1fr;
+  height: 100vh;
+}
+
+.gallery .grid-slideshow {
+  grid-area: slideshow;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery .slideshow {
+  width: 50%;
+  height: 85%;
+  background: url(https://www.tokkoro.com/picsup/2606441-star-wars-hd-wallpaper-desktop.jpg)
+    no-repeat;
+  background-size: 100%;
+}
+
+.gallery .grid-img-selector {
+  grid-area: img-selector;
+  background: #747474;
+}
