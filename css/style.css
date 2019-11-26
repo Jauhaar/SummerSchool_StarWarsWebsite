@@ -10,7 +10,7 @@
 
 body {
   background-color: #fff;
-  color: #7f7f7f;
+  color: yellow;
   font-family: StarWars;
 }
 
@@ -20,7 +20,7 @@ body {
   overflow: hidden;
 }
 
-header {
+.index-header {
   background: #000;
   padding-top: 30px;
   min-height: 10vh;
@@ -52,6 +52,7 @@ header {
 }
 
 .menu-nav .nav-item.current > a {
+  color: #47b3ff;
 }
 
 .nav-item .nav-link {
@@ -96,12 +97,90 @@ header {
   height: 100%;
 }
 
-footer {
+.index-footer {
   width: 100%;
   height: 10vh;
   background: #000;
   border-top: 3px yellow solid;
   color: yellow;
+  padding-top: 25px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* ABOUT MOVIE */
+.about.grid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "left-sidebar main-section main-section"
+    "left-sidebar article-1 article-2"
+    "footer footer footer";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 6fr 3fr 1fr;
+  grid-gap: 20px;
+  background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
+    no-repeat;
+  /* height: 100vh; */
+  /* margin: 10px; */
+}
+
+.about .grid-header {
+  grid-area: header;
+  background-color: #000;
+  border-bottom: 3px yellow solid;
+  box-shadow: 0 0 10px 0 yellow;
+  padding: 10px 0 5px 0;
+}
+.about .grid-left-sidebar {
+  grid-area: left-sidebar;
+  background: url(https://r1.ilikewallpaper.net/iphone-wallpapers/download/79020/star-wars-the-rise-of-skywalker-2019-4k-iphone-wallpaper-ilikewallpaper_com.jpg)
+    no-repeat -150px -400px;
+}
+
+.about .grid-main-section {
+  grid-area: main-section;
+  background: url(https://wallpaperplay.com/walls/full/e/c/2/84884.jpg)
+    no-repeat 0 -50px;
+  background-size: 100%;
+}
+
+.about .grid-main-section p {
+  width: 40%;
+  padding: 25px;
+  margin: 25px;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+}
+
+.about .grid-main-section h1 {
+  padding: 10px 0 0 10px;
+}
+
+.about .grid-article-1 {
+  grid-area: article-1;
+  background: url(https://coverfiles.alphacoders.com/397/39735.jpg) no-repeat -190px -50px;
+}
+
+.about .grid-article-2 {
+  grid-area: article-2;
+  background: rgb(51, 51, 51, 0.3);
+}
+
+.about .grid-article-2 p {
+  margin: 25px;
+  padding: 20px;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+}
+
+.about .grid-footer {
+  grid-area: footer;
+  background-color: #000;
+  border-top: 3px yellow solid;
+  box-shadow: 0 0 5px 0 yellow;
   padding-top: 25px;
   font-size: 16px;
   text-align: center;
