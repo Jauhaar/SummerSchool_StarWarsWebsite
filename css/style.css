@@ -108,7 +108,7 @@ body {
   text-align: center;
 }
 
-/* ABOUT MOVIE */
+/* ABOUT MOVIE PAGE */
 .about.grid {
   display: grid;
   grid-template-areas:
@@ -125,7 +125,7 @@ body {
   /* margin: 10px; */
 }
 
-.about .grid-header {
+.grid-header {
   grid-area: header;
   background-color: #000;
   border-bottom: 3px yellow solid;
@@ -176,7 +176,7 @@ body {
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
 }
 
-.about .grid-footer {
+.grid-footer {
   grid-area: footer;
   background-color: #000;
   border-top: 3px yellow solid;
@@ -184,4 +184,75 @@ body {
   padding-top: 25px;
   font-size: 16px;
   text-align: center;
+}
+
+/* CAST PAGE */
+.cast.grid {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "cast-1 cast-2 cast-3 cast-4 cast-5"
+    "info-1 info-2 info-3 info-4 info-5"
+    "footer footer footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+  grid-gap: 25px;
+  background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
+    no-repeat;
+}
+
+/* .cast .grid-header {
+  grid-area: header;
+  background: #000;
+} */
+
+.cast .grid-cast-1 {
+  grid-area: cast-1;
+  background: #333;
+}
+.cast .grid-info-1 {
+  grid-area: info-1;
+  background: #333;
+}
+
+.cast .grid-cast-2 {
+  grid-area: cast-2;
+  background: #333;
+}
+.cast .grid-info-2 {
+  grid-area: info-2;
+  background: #333;
+}
+
+.cast .grid-cast-3 {
+  grid-area: cast-3;
+  background: #333;
+}
+.cast .grid-info-3 {
+  grid-area: info-3;
+  background: #333;
+}
+
+.cast .grid-cast-4 {
+  grid-area: cast-4;
+  background: #333;
+}
+.cast .grid-info-4 {
+  grid-area: info-4;
+  background: #333;
+}
+
+.cast .grid-cast-5 {
+  grid-area: cast-5;
+  background: #333;
+}
+.cast .grid-info-5 {
+  grid-area: info-5;
+  background: #333;
+}
+
+.cast .grid-footer {
+  grid-area: footer;
+  background: #000;
 }
