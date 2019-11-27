@@ -259,6 +259,7 @@ body {
 
 /* GALLERY PAGE */
 .gallery.grid {
+  height: 100vh;
   display: grid;
   grid-template-areas:
     "header "
@@ -267,7 +268,6 @@ body {
     "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr 2fr 1fr;
-  height: 100vh;
   background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
     no-repeat;
 }
@@ -368,5 +368,62 @@ body {
 }
 
 .gallery.grid footer {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* BOOK TICKETS */
+.tickets.grid {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "cart cinema"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
+    no-repeat;
+}
+
+.tickets.grid header {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.tickets .grid-cart {
+  grid-area: cart;
+  background: rgba(56, 56, 56, 0.5);
+  box-shadow: 0 0 15px 5px #000;
+  z-index: -2;
+  display: grid;
+  grid-template-areas:
+    "item-cart"
+    "checkout";
+  grid-template-columns: 100%;
+  grid-template-rows: 4fr 1fr;
+}
+
+.grid-cart .grid-item-cart {
+  grid-area: item-cart;
+}
+
+/* .grid-item-cart .item-container {
+  width: 75%;
+  height: 75%;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+} */
+
+.grid-cart .grid-checkout {
+  grid-area: checkout;
+}
+
+.tickets .grid-cinema {
+  grid-area: cinema;
+  background: rgba(44, 44, 44, 0.5);
+  z-index: -1;
+}
+
+.tickets.grid footer {
   background: rgba(0, 0, 0, 0.8);
 }
