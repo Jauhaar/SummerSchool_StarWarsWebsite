@@ -380,7 +380,7 @@ body {
     "cart cinema"
     "footer footer";
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-rows: 1fr 6fr 0.5fr;
   background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
     no-repeat;
 }
@@ -393,7 +393,6 @@ body {
   grid-area: cart;
   background: rgba(56, 56, 56, 0.5);
   box-shadow: 0 0 15px 5px #000;
-  z-index: -2;
   display: grid;
   grid-template-areas:
     "item-cart"
@@ -406,22 +405,269 @@ body {
   grid-area: item-cart;
 }
 
-/* .grid-item-cart .item-container {
-  width: 75%;
-  height: 75%;
+.grid-item-cart .item-container {
+  position: relative;
+  width: 85%;
+  height: 90%;
+  margin: 5%;
   background-color: rgba(0, 86, 247, 0.1);
   border-radius: 25px 25px 25px 25px;
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
-} */
+}
+
+.item-container .items-list {
+  list-style-type: none;
+  font-size: 14px;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+.items-list .item {
+  width: 95%;
+  border-bottom: 2px yellow dotted;
+  padding-bottom: 3px;
+}
+
+.item .remove {
+  color: red;
+  float: right;
+  padding-top: 2px;
+  cursor: pointer;
+  text-shadow: 0 0 5px #000;
+}
+
+.item .remove:hover {
+  transform: scale(1.25);
+}
+
+.item .price {
+  display: block;
+}
+
+.item-container .total-container {
+  position: absolute;
+  text-align: left;
+  text-indent: 10%;
+  font-size: 20px;
+  bottom: 0px;
+  width: 100%;
+  border-top: 3px rgb(255, 255, 0, 0.9) solid;
+}
+
+.total .price {
+  float: right;
+  margin-right: 10%;
+}
 
 .grid-cart .grid-checkout {
   grid-area: checkout;
+  box-shadow: 0 0 5px 1px #000;
+}
+
+.grid-checkout .btn-checkout {
+  width: 85%;
+  height: 65%;
+  margin: 5%;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.grid-checkout .btn-checkout:hover {
+  background-color: rgba(0, 86, 247, 0.3);
+  box-shadow: 0 0 10px 0 yellow;
+}
+
+.grid-checkout p {
+  font-size: 25px;
+  padding: 7px 0;
+  text-align: center;
 }
 
 .tickets .grid-cinema {
   grid-area: cinema;
   background: rgba(44, 44, 44, 0.5);
-  z-index: -1;
+  display: grid;
+  grid-template-areas: "extras seats";
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 100%;
+}
+
+.grid-cinema .grid-extras {
+  grid-area: extras;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid-extras .popcorn {
+  width: 75%;
+  height: 45%;
+  background: url(https://i.pinimg.com/474x/90/95/14/9095141d1029049c71c5cec8de36e211.jpg)
+    no-repeat;
+  background-size: cover;
+  border-radius: 25px 25px 25px 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 0 yellow;
+}
+
+.grid-extras .popcorn:hover {
+  transform: scale(1.05);
+}
+
+.grid-extras .coke {
+  width: 75%;
+  height: 45%;
+  background: url(https://cdn.shopify.com/s/files/1/0516/8921/products/Dosen_3D_R2D2_01_2048x2048.jpg?v=1508878241)
+    no-repeat;
+  background-size: cover;
+  border-radius: 25px 25px 25px 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 0 yellow;
+}
+
+.grid-extras .coke:hover {
+  transform: scale(1.05);
+}
+
+.extras-animation {
+  animation-name: extras-animation;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes extras-animation {
+  0% {
+    box-shadow: 0 0 12px 0 yellow;
+  }
+  50% {
+    box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  }
+  100% {
+    box-shadow: 0 0 12px 0 yellow;
+  }
+}
+
+.grid-cinema .grid-seats {
+  grid-area: seats;
+  display: grid;
+  grid-template-areas:
+    "screen screen screen screen screen"
+    " . a1 a2 a3 ."
+    " . b1 b2 b3 . "
+    " legend c1 c2 c3 . ";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.screen {
+  width: 90%;
+  height: 70%;
+  margin: 3%;
+  grid-area: screen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+}
+
+.screen p {
+  font-size: 35px;
+}
+
+.seat-a1 {
+  grid-area: a1;
+}
+.seat-a2 {
+  grid-area: a2;
+}
+.seat-a3 {
+  grid-area: a3;
+}
+
+.seat-b1 {
+  grid-area: b1;
+}
+.seat-b2 {
+  grid-area: b2;
+}
+.seat-b3 {
+  grid-area: b3;
+}
+
+.legend {
+  grid-area: legend;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+}
+
+.legend .available {
+  width: 80%;
+  height: 35%;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend .taken {
+  width: 80%;
+  height: 35%;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  background-color: rgb(255, 0, 0, 0.2);
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat-c1 {
+  grid-area: c1;
+}
+.seat-c2 {
+  grid-area: c2;
+}
+.seat-c3 {
+  grid-area: c3;
+}
+
+.seats {
+  width: 85%;
+  height: 85%;
+  margin: 7%;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hover.seats:hover {
+  background-color: rgba(0, 86, 247, 0.2);
+  box-shadow: 0 0 10px 0 yellow;
+}
+
+.seats p {
+  font-size: 30px;
+}
+
+.taken-seat {
+  background-color: rgb(255, 0, 0, 0.2);
+  cursor: default;
 }
 
 .tickets.grid footer {
