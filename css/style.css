@@ -14,13 +14,30 @@ body {
   font-family: StarWars;
 }
 
+.index.grid {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "left-sidebar showcase right-sidebar"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 6fr 0.5fr;
+  background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
+    no-repeat;
+}
+
+.index.grid header {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .container {
   width: 90%;
   margin: auto;
   overflow: hidden;
 }
 
-.index-header {
+.grid-header {
   background: #000;
   padding-top: 30px;
   min-height: 10vh;
@@ -66,12 +83,25 @@ body {
   text-shadow: 0px 0px 15px rgb(255, 255, 0, 0.5);
 }
 
-.showcase {
+.index .grid-left-sidebar {
+  background: rgba(44, 44, 44, 0.4);
+  box-shadow: 0 0 15px 2px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.grid-left-sidebar .star-wars-text {
+  height: 75%;
   width: 100%;
-  height: 76.5vh;
-  background: url(/images/landing-page_showcase.jpg) no-repeat 0 -50px;
+}
+
+.showcase {
+  grid-area: showcase;
+  background: rgba(44, 44, 44, 0.5);
   display: flex;
 }
+
 .video-wrap {
   width: 80%;
   max-width: 640px;
@@ -97,15 +127,53 @@ body {
   height: 100%;
 }
 
-.index-footer {
-  width: 100%;
-  height: 10vh;
-  background: #000;
-  border-top: 3px yellow solid;
-  color: yellow;
-  padding-top: 25px;
-  font-size: 16px;
+.index .grid-right-sidebar {
+  background: rgba(44, 44, 44, 0.4);
+  box-shadow: 0 0 15px 2px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-right-sidebar .special {
+  width: 85%;
+  height: 75%;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 15px 0 rgba(0, 86, 247);
+  text-shadow: 0 0 15px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  cursor: pointer;
+}
+
+.grid-right-sidebar .special:hover {
+  transform: scale(1.05);
+}
+
+.special-animation {
+  animation-name: extras-animation;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes special-animation {
+  0% {
+    box-shadow: 0 0 15px 0 yellow;
+  }
+  50% {
+    box-shadow: 0 0 15px 0 rgba(0, 86, 247);
+  }
+  100% {
+    box-shadow: 0 0 15px 0 yellow;
+  }
+}
+
+.index.grid footer {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* ABOUT MOVIE PAGE */
@@ -127,7 +195,7 @@ body {
 
 .grid-header {
   grid-area: header;
-  background-color: #000;
+  background-color: rgb(0, 0, 0, 0.4);
   border-bottom: 3px yellow solid;
   box-shadow: 0 0 10px 0 yellow;
   padding: 10px 0 5px 0;
@@ -152,6 +220,7 @@ body {
   background-color: rgba(0, 86, 247, 0.1);
   border-radius: 25px 25px 25px 25px;
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  text-shadow: 0 0 15px #000;
 }
 
 .about .grid-main-section h1 {
@@ -174,14 +243,15 @@ body {
   background-color: rgba(0, 86, 247, 0.1);
   border-radius: 25px 25px 25px 25px;
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  text-shadow: 0 0 15px #000;
 }
 
 .grid-footer {
   grid-area: footer;
-  background-color: #000;
+  background-color: rgb(0, 0, 0, 0.3);
   border-top: 3px yellow solid;
   box-shadow: 0 0 5px 0 yellow;
-  padding-top: 25px;
+  padding-top: 10px;
   font-size: 16px;
   text-align: center;
 }
@@ -196,65 +266,155 @@ body {
     "info-1 info-2 info-3 info-4 info-5"
     "footer footer footer footer footer";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr 1fr;
+  grid-template-rows: 0.5fr 3fr 1fr 0.5fr;
   grid-gap: 25px;
   background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
     no-repeat;
 }
 
-/* .cast .grid-header {
-  grid-area: header;
-  background: #000;
-} */
+.cast .info {
+  width: 90%;
+  height: 75%;
+  margin: 5%;
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  text-shadow: 0 0 15px #000;
+}
 
 .cast .grid-cast-1 {
   grid-area: cast-1;
-  background: rgba(51, 51, 51, 0.35);
+  background: url(https://www.cheatsheet.com/wp-content/uploads/2019/11/daisy-ridley-in-a-black-dress-1024x763.jpg)
+    no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.cast .grid-cast-1 p {
+  z-index: -1;
+}
+.cast .grid-cast-1:hover {
+  background: rgb(0, 0, 0, 0);
+  font-size: 16px;
 }
 .cast .grid-info-1 {
   grid-area: info-1;
   background: rgba(51, 51, 51, 0.35);
+  border-radius: 15px 15px 15px 15px;
 }
 
 .cast .grid-cast-2 {
   grid-area: cast-2;
-  background: rgba(51, 51, 51, 0.35);
+  background: url(https://www.nydailynews.com/resizer/biYRw5_PjQYm_F5AVDJHxF8wHc4=/800x584/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/J327RSZVZZCLBIPIZ77SXPQLQU.jpg)
+    no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.cast .grid-cast-2 p {
+  z-index: -1;
+}
+.cast .grid-cast-2:hover {
+  background: rgb(0, 0, 0, 0);
+  font-size: 16px;
 }
 .cast .grid-info-2 {
   grid-area: info-2;
   background: rgba(51, 51, 51, 0.35);
+  border-radius: 15px 15px 15px 15px;
 }
 
 .cast .grid-cast-3 {
   grid-area: cast-3;
-  background: rgba(51, 51, 51, 0.35);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Star_Wars-_The_Last_Jedi_Japan_Premiere_Red_Carpet-_Adam_Driver_%2827163437599%29_%28cropped%29.jpg/800px-Star_Wars-_The_Last_Jedi_Japan_Premiere_Red_Carpet-_Adam_Driver_%2827163437599%29_%28cropped%29.jpg)
+    no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.cast .grid-cast-3 p {
+  z-index: -1;
+}
+.cast .grid-cast-3:hover {
+  background: rgb(0, 0, 0, 0);
+  font-size: 16px;
 }
 .cast .grid-info-3 {
   grid-area: info-3;
   background: rgba(51, 51, 51, 0.35);
+  border-radius: 15px 15px 15px 15px;
 }
 
 .cast .grid-cast-4 {
   grid-area: cast-4;
-  background: rgba(51, 51, 51, 0.35);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Carrie_Fisher_2013-a_straightened.jpg/220px-Carrie_Fisher_2013-a_straightened.jpg)
+    no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.cast .grid-cast-4 p {
+  z-index: -1;
+}
+.cast .grid-cast-4:hover {
+  background: rgb(0, 0, 0, 0);
+  font-size: 16px;
 }
 .cast .grid-info-4 {
   grid-area: info-4;
   background: rgba(51, 51, 51, 0.35);
+  border-radius: 15px 15px 15px 15px;
 }
 
 .cast .grid-cast-5 {
   grid-area: cast-5;
-  background: rgba(51, 51, 51, 0.35);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mark_Hamill_%282017%29.jpg/480px-Mark_Hamill_%282017%29.jpg)
+    no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.cast .grid-cast-5 p {
+  z-index: -1;
+}
+.cast .grid-cast-5:hover {
+  background: rgb(0, 0, 0, 0);
+  font-size: 16px;
 }
 .cast .grid-info-5 {
   grid-area: info-5;
   background: rgba(51, 51, 51, 0.35);
+  border-radius: 15px 15px 15px 15px;
 }
 
 .cast .grid-footer {
   grid-area: footer;
-  background: #000;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* GALLERY PAGE */
@@ -267,7 +427,7 @@ body {
     "img-selector"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 2fr 1fr;
+  grid-template-rows: 0.5fr 4fr 2fr 0.5fr;
   background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
     no-repeat;
 }
@@ -475,9 +635,31 @@ body {
   cursor: pointer;
 }
 
+/* PAID animation */
+.checkout-animation {
+  animation-name: checkout-animation;
+  animation-duration: 1.5s;
+  animation-iteration-count: 3;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes checkout-animation {
+  0% {
+    box-shadow: 0 0 15px 0 yellow;
+  }
+  50% {
+    box-shadow: 0 0 15px 0 rgba(0, 86, 247);
+  }
+  100% {
+    box-shadow: 0 0 15px 0 yellow;
+  }
+}
+
 .grid-checkout .btn-checkout:hover {
   background-color: rgba(0, 86, 247, 0.3);
   box-shadow: 0 0 10px 0 yellow;
+  transform: scale(1.025);
 }
 
 .grid-checkout p {
@@ -513,10 +695,25 @@ body {
   border-radius: 25px 25px 25px 25px;
   cursor: pointer;
   box-shadow: 0 0 15px 0 yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0px;
+  transition: all 0.1s ease-out;
+}
+
+.popcorn p {
+  width: 95%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 5px 0 yellow inset;
 }
 
 .grid-extras .popcorn:hover {
   transform: scale(1.05);
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0px 0px 10px #000;
 }
 
 .grid-extras .coke {
@@ -528,10 +725,25 @@ body {
   border-radius: 25px 25px 25px 25px;
   cursor: pointer;
   box-shadow: 0 0 15px 0 yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0px;
+  transition: all 0.1s ease-out;
+}
+
+.coke p {
+  width: 95%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 5px 0 yellow inset;
 }
 
 .grid-extras .coke:hover {
   transform: scale(1.05);
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0px 0px 10px #000;
 }
 
 .extras-animation {
@@ -543,13 +755,13 @@ body {
 
 @keyframes extras-animation {
   0% {
-    box-shadow: 0 0 12px 0 yellow;
+    box-shadow: 0 0 15px 0 yellow;
   }
   50% {
-    box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+    box-shadow: 0 0 15px 0 rgba(0, 86, 247);
   }
   100% {
-    box-shadow: 0 0 12px 0 yellow;
+    box-shadow: 0 0 15px 0 yellow;
   }
 }
 
@@ -560,7 +772,7 @@ body {
     "screen screen screen screen screen"
     " . a1 a2 a3 ."
     " . b1 b2 b3 . "
-    " legend c1 c2 c3 . ";
+    " legend c1 c2 c3 ticket-price ";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
 }
@@ -643,6 +855,21 @@ body {
   grid-area: c3;
 }
 
+.ticket-price {
+  width: 85%;
+  height: 85%;
+  margin: 7%;
+  grid-area: ticket-price;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  box-shadow: 0 0 10px 0 rgba(0, 86, 247);
+  background-color: rgba(0, 86, 247, 0.1);
+  border-radius: 25px 25px 25px 25px;
+}
+
 .seats {
   width: 85%;
   height: 85%;
@@ -654,6 +881,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .hover.seats:hover {
@@ -667,6 +895,11 @@ body {
 
 .taken-seat {
   background-color: rgb(255, 0, 0, 0.2);
+  cursor: default;
+}
+
+.reserved-seat {
+  background-color: rgb(255, 255, 0, 0.1);
   cursor: default;
 }
 

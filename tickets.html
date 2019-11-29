@@ -36,15 +36,11 @@
       <div class="grid-item-cart">
         <div class="item-container">
           <ul class="items-list">
-            <li class="item">
+            <!-- <li class="item">
               <span class="item-name">Test item 1:</span>
               <span class="remove">x</span>
               <span class="price">R50.00</span>
-            </li>
-            <li class="item">
-              Test item 2: <span class="remove">x</span>
-              <span class="price">R12.50</span>
-            </li>
+            </li> -->
           </ul>
           <div class="total-container">
             <p class="total">Total: <span class="price"></span></p>
@@ -57,27 +53,35 @@
     </div>
     <div class="grid-cinema">
       <div class="grid-extras">
-        <div class="popcorn extras-animation"></div>
-        <div class="coke extras-animation"></div>
+        <div class="popcorn extras-animation">
+          <p id="popcorn-price">r25</p>
+        </div>
+        <div class="coke extras-animation"><p id="coke-price">r12</p></div>
       </div>
       <div class="grid-seats">
         <div class="screen"><p>screen</p></div>
-        <div class="seat-a1 seats hover"><p>a1</p></div>
-        <div class="seat-a2 seats hover"><p>a2</p></div>
-        <div class="seat-a3 seats hover"><p>a3</p></div>
+        <div class="seat-a1 seats hover available">a1</div>
+        <div class="seat-a2 seats hover available">a2</div>
+        <div class="seat-a3 seats hover available">a3</div>
 
-        <div class="seat-b1 seats taken-seat"><p>b1</p></div>
-        <div class="seat-b2 seats taken-seat"><p>b1</p></div>
-        <div class="seat-b3 seats hover"><p>b3</p></div>
+        <div class="seat-b1 seats taken-seat">b1</div>
+        <div class="seat-b2 seats taken-seat">b1</div>
+        <div class="seat-b3 seats hover available">b3</div>
 
         <div class="legend">
           <div class="available">available</div>
           <div class="taken">taken</div>
         </div>
 
-        <div class="seat-c1 seats hover"><p>c1</p></div>
-        <div class="seat-c2 seats hover"><p>c2</p></div>
-        <div class="seat-c3 seats taken-seat"><p>c3</p></div>
+        <div class="seat-c1 seats hover available">c1</div>
+        <div class="seat-c2 seats hover available">c2</div>
+        <div class="seat-c3 seats taken-seat">c3</div>
+
+        <div class="ticket-price">
+          <p>Ticket</p>
+          <p>price:</p>
+          <p>r60</p>
+        </div>
       </div>
     </div>
     <footer class="grid-footer">
