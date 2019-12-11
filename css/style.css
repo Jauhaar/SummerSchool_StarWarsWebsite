@@ -189,7 +189,7 @@ body {
   grid-gap: 20px;
   background: url(http://getwallpapers.com/wallpaper/full/9/c/7/326560.jpg)
     no-repeat;
-  /* height: 100vh; */
+  height: 100vh;
   /* margin: 10px; */
 }
 
