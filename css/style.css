@@ -849,7 +849,7 @@ body {
   font-size: 22px;
 }
 
-.legend .available {
+.legend .legend-available {
   width: 80%;
   height: 35%;
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
@@ -860,7 +860,7 @@ body {
   align-items: center;
 }
 
-.legend .taken {
+.legend .legend-taken {
   width: 80%;
   height: 35%;
   box-shadow: 0 0 10px 0 rgba(0, 86, 247);
