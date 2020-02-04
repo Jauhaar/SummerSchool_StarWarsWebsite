@@ -1,4 +1,6 @@
-# Star Wars Website made for Immedia Summer School
+# ** PLEASE NOTE THAT THIS WEBSITE NEEDS TO BE RUN ON A LOCAL WEB SERVER IN ORDER TO FUNCTION CORRECTLY **
+
+## Star Wars Website made for Immedia Summer School
 
 > ### The theme for the website, provided by the Immedia Dev Team, was for me to promote a Star Wars movie.
 
