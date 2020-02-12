@@ -1,4 +1,4 @@
-# **PLEASE NOTE THAT THIS WEBSITE NEEDS TO BE RUN ON A LOCAL WEB SERVER IN ORDER TO FUNCTION CORRECTLY**
+# **You may view a live version of this website [HERE](https://jauhaar.github.io/summerschool_starwarswebsite)**
 
 ## Star Wars Website made for Immedia Summer School
 

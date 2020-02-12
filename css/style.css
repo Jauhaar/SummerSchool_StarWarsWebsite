@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: StarWars;
-  src: url(/Fonts/STJEDISE.TTF);
+  src: url(../Fonts/STJEDISE.TTF);
 }
 
 body {
@@ -474,7 +474,7 @@ body {
 }
 
 .animation {
-  background: url(/images/slideshow_img.png);
+  background: url(../images/slideshow_img.png);
   background-repeat: no-repeat;
   background-position: 0;
   background-size: cover;
