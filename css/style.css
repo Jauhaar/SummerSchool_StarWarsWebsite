@@ -155,6 +155,11 @@ body {
   transform: scale(1.05);
 }
 
+.special-link {
+  color: yellow;
+  text-decoration: none;
+}
+
 .special-animation {
   animation-name: extras-animation;
   animation-duration: 1s;
