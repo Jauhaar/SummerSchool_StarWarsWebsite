@@ -1,4 +1,4 @@
-# **You may view a live version of this website [HERE](https://jauhaar.github.io/summerschool_starwarswebsite)**
+# **You may view a live version of this website [HERE](https://jauhaar.github.io/SummerSchool_StarWarsWebsite/)**
 
 ## Star Wars Website made for Immedia Summer School
 
